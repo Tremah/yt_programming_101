@@ -1,13 +1,13 @@
 //We have been working with a function the entire time, the main() function
 //A Function is basically a piece of code which can be called by its given name
 // 
-//Functions consist of a name, a signature, a return type and a body:
-//   returnType name(signature)
+//Functions consist of a return type, a name, a parameter list and and a body:
+//   returnType name(parameter list)
 //   {
 //      body
-//   } 
-// 
-//Functions must be uniquely identifiable by the combination of their name and signature
+//   }  
+//Combination of return type, name and parameter list is called the signature 
+//Functions must be uniquely identifiable by their signature
 // 
 //Functions can have any name
 //  Usually their name cannot start with a number, can include underscores but must not include any other special character (., \, /, etc.)
@@ -22,54 +22,41 @@
 // 
 //A functions body is the part where the programmer places the logic
 //
-//Functions are called by their name and signature
+//Example function calls
 //  function(int number, std::string text)
 //  int value = giveMeAnInt()
 
 #include <iostream>
 
-void print()
+void printStaticText()
 {
-  std::cout << "print from function with empty signature\n";
+  std::cout << "print from printStaticText()\n";
 }
 
-void print(std::string message)
+void printDynamicText(std::string message)
 {
   std::cout << message << "\n";
 }
 
-void print(std::string message, int number)
+void printMultipleParameters(int number1, int number2)
 {
-  std::cout << message << number << "\n";
+  std::cout << "You gave the following numbers: " << number1 << " " << number2 << "\n";
 }
 
-void function2()
+int giveMeAnInt()
 {
-  std::cout << "print from function 2\n";
-}
-
-int returnMeAnInt()
-{
-  return 5;
-}
-
-int returnMeAnInt(int value)
-{
-  return value;
+  return 666;
 }
 
 int main()
 {
-  std::cout << "print from main\n";
-  print();
-  print("print from function with string parameter");
-  print("print from function with string and int parameter ", 5);
-  function2();
+  std::cout << "text\n";
+  printStaticText();
+  printDynamicText("Our custom message!");
+  printMultipleParameters(5, 6);
 
-  int a = returnMeAnInt();
-  std::cout << "value from returnMeAnint(): " << a << "\n";
-  int b = returnMeAnInt(6);
-  print("value from returnMeAnInt(6): ", b);
+  int value = giveMeAnInt();
+  std::cout << "value from giveMeAnInt(): " << value << "\n";
 
   return 0;
 }
