@@ -11,6 +11,7 @@
 // - After a operation was successfully completed, the result should be printed and the user should be presented with the menu again
 // - The last option in the menu should be to quit the program
 // - Homework for the viewer:
+//   - Implement processing of floating point values
 //   - Implement a check so that if the user does not enter a valid number, he/she is asked to enter the number again
 
 
